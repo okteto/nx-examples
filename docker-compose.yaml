@@ -1,0 +1,6 @@
+services:
+  app:
+    image: okteto.dev/products
+    build: .
+    ports:
+    - 8080:8080

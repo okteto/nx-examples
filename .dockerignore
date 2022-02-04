@@ -1,0 +1,23 @@
+# git
+.git
+
+# compiled output
+dist
+tmp
+out-tsc
+
+# dependencies
+node_modules
+
+# IDE - VSCode
+.vscode
+.circleci
+
+npm-debug.log
+yarn-error.log
+testem.log
+typings
+
+# System Files
+.DS_Store
+Thumbs.db

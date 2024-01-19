@@ -1,0 +1,22 @@
+build:
+  # build an image with all our development dependencies
+  dev:
+    context: .
+    target: dev
+
+deploy:
+  compose: docker-compose.yaml
+
+dev:
+  cart:
+    image: $OKTETO_BUILD_DEV_IMAGE
+    command: bash
+    workdir: /usr/src/app
+    sync:
+    - .:/usr/src/app
+  products:
+    image: $OKTETO_BUILD_DEV_IMAGE
+    command: bash
+    workdir: /usr/src/app
+    sync:
+    - .:/usr/src/app

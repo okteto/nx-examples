@@ -1,0 +1,9 @@
+services:
+  products:
+    image: bitnami/nginx
+    ports:
+    - 8080:8080
+  cart:
+    image: bitnami/nginx
+    ports:
+    - 8080:8080

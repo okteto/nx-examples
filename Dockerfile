@@ -11,9 +11,3 @@ COPY  . .
 
 # build the assets using NX
 RUN nx build --prod
-
-# use NGINX to serve the assets
-FROM bitnami/nginx
-
-# copy the assets we build in the previous stage to the /app folder, where NGINX will serve them
-COPY --from=build /usr/src/app/dist/apps/products /app/products

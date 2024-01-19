@@ -1,9 +1,11 @@
 services:
   products:
-    image: bitnami/nginx
+    image: ${OKTETO_BUILD_APP_IMAGE}
+    command: nx serve products
     ports:
     - 8080:8080
   cart:
-    image: bitnami/nginx
+    image: ${OKTETO_BUILD_APP_IMAGE}
+    command: nx serve cart
     ports:
     - 8080:8080

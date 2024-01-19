@@ -21,3 +21,6 @@ typings
 # System Files
 .DS_Store
 Thumbs.db
+
+docker-compose.yaml
+okteto.yaml

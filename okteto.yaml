@@ -1,4 +1,8 @@
 build:
+  # since all the apps use the same base image, only build it once
+  app:
+    context: .
+
   # build an image with all our development dependencies
   dev:
     context: .

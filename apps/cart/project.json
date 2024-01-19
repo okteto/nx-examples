@@ -73,7 +73,15 @@
     "serve": {
       "executor": "@nx/webpack:dev-server",
       "options": {
-        "buildTarget": "cart:build"
+        "buildTarget": "cart:build",
+        "port": 8080,
+        "host": "0.0.0.0",
+        "allowedHosts": "all",
+        "client": {
+          "webSocketURL": {
+            "port": 443
+          }
+        }
       },
       "configurations": {
         "production": {

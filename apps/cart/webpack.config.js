@@ -1,5 +1,6 @@
 const { composePlugins, withNx } = require('@nx/webpack');
 const { withReact } = require('@nx/react');
+const { merge } = require('webpack-merge');
 
 // Nx plugins for webpack.
 module.exports = composePlugins(
@@ -10,6 +11,27 @@ module.exports = composePlugins(
     // e.g. config.plugins.push(new MyPlugin())
     // For more information on webpack config and Nx see:
     // https://nx.dev/packages/webpack/documents/webpack-config-setup
-    return config;
+    return merge(config, {
+      devServer: {
+        port: 8080,
+        host: '0.0.0.0',
+        hot: true,
+        allowedHosts: 'all',
+        client: {
+          webSocketTransport: 'ws'
+        },
+        webSocketServer: 'ws',
+        client: {
+          webSocketURL: {
+            port: 443
+          },
+        },
+        watchFiles: {
+          options: {
+            usePolling: true,
+          },
+        }
+      }
+    })
   }
 );

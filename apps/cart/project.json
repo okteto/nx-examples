@@ -34,8 +34,7 @@
           "node_modules/normalize.css/normalize.css"
         ],
         "scripts": [],
-        "buildLibsFromSource": true,
-        "isolatedConfig": true
+        "buildLibsFromSource": true
       },
       "configurations": {
         "production": {
@@ -73,15 +72,7 @@
     "serve": {
       "executor": "@nx/webpack:dev-server",
       "options": {
-        "buildTarget": "cart:build",
-        "port": 8080,
-        "host": "0.0.0.0",
-        "allowedHosts": "all",
-        "client": {
-          "webSocketURL": {
-            "port": 443
-          }
-        }
+        "buildTarget": "cart:build"
       },
       "configurations": {
         "production": {
